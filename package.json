@@ -1,0 +1,12 @@
+{
+  "devDependencies": {
+    "copyfiles": "^2.4.1",
+    "gh-pages": "^6.3.0"
+  },
+  "scripts": {
+    "build": "",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "homepage": "https://GreenerFutureTech.github.io/pwa-demo"
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" type="image/png" href="https://edgestatic.azureedge.net/welcome/static/favicon.png">
+    <link rel="stylesheet" href="./converter.css">
+    <link rel="manifest" href="./manifest.json">
+    <title>Temperature converter</title>
+  </head>
+  <body>
+    <form id="converter">
+      <label for="input-temp">temperature</label>
+      <input type="text" id="input-temp" name="input-temp" value="20" />
+      <label for="input-unit">from</label>
+      <select id="input-unit" name="input-unit">
+        <option value="c" selected>Celsius</option>
+        <option value="f">Fahrenheit</option>
+        <option value="k">Kelvin</option>
+      </select>
+      <label for="output-unit">to</label>
+      <select id="output-unit" name="output-unit">
+        <option value="c">Celsius</option>
+        <option value="f" selected>Fahrenheit</option>
+        <option value="k">Kelvin</option>
+      </select>
+      <output name="output-temp" id="output-temp" for="input-temp input-unit output-unit">68 F</output>
+    </form>
+    <div>
+      <button id="install-btn">Install App</button>
+      <button id="location-btn">Get Location</button>
+      <button id="save-btn">Save File</button>
+      <button id="share-btn">Share Site</button>
+      <button id="contacts-btn">Add Contacts</button>
+      <button id="start-idle-detection">Start Idle Detection</button>
+
+    </div>
+    <pre id="output"></pre>
+    
+    <script src="./pwa-demo.js"></script>
+    <script src="./converter.js"></script>
+    <script>
+      navigator.serviceWorker.register('/sw.js', { scope: '/' }).then((registration) => {
+      console.log('Service Worker registered', registration);
+
+      if (navigator.serviceWorker.controller) {
+        console.log('Service Worker is controlling the page');
+      } else {
+        console.log('Service Worker is registered but not yet controlling the page.');
+      }
+    });
+      </script>
+  </body>
+</html>
