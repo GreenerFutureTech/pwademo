@@ -8,5 +8,5 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://GreenerFutureTech.github.io/pwa-demo"
+  "homepage": "https://GreenerFutureTech.github.io/pwademo"
 }
